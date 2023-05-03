@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import logo from "../logo.png";
+import logo from "../assets/logo.png";
 
 const Navbar = (props) => {
   const amount = useSelector((state) => state.amount);
@@ -18,7 +18,7 @@ const Navbar = (props) => {
         </a>
         <div className="container-fluid">
           <a className="navbar-brand" href="/" style={{ marginLeft: "-10px" }}>
-            State Bank Of Shravan
+            State Bank Of Swaroopganj
           </a>
           <button
             className="navbar-toggler"
