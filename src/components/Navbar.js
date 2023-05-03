@@ -1,12 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import logo from "../logo.png";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const amount = useSelector((state) => state.amount);
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <a class="navbar-brand" href="/">
+          <img
+            src={logo}
+            alt="Bank"
+            width="24"
+            height="24"
+            style={{ display: "flex", marginLeft: "10px" }}
+          />
+        </a>
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            State Bank Of Shravan                             
+          <a className="navbar-brand" href="/" style={{ marginLeft: "-10px" }}>
+            State Bank Of Shravan
           </a>
           <button
             className="navbar-toggler"
@@ -27,22 +39,18 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Link
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="/about"
+                >
+                  About
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <button disabled={false} className="btn-primary">
+              Your Balance: {amount}
+            </button>
           </div>
         </div>
       </nav>
